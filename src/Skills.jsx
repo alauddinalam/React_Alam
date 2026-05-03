@@ -19,6 +19,8 @@ function Skills() {
       { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', progress: '90%' },
       { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', progress: '78%' },
       { name: 'Canva', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg', progress: '97%' },
+      { name: 'Excel', icon: 'https://img.icons8.com/color/48/000000/microsoft-excel-2019--v1.png', progress: '94%' },
+      { name: 'Word', icon: 'https://img.icons8.com/color/48/000000/microsoft-word-2019--v1.png', progress: '97%' },
     ],
     []
   );

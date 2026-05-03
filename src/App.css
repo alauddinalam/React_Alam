@@ -42,9 +42,10 @@ html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   scroll-padding-top: 90px;
+  scroll-padding-bottom: 80px;
 }
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
   background: var(--bg-gradient);
   color: var(--text);
@@ -53,10 +54,20 @@ body {
 .home,
 .container,
 .skills-section,
+.projects-section,
 .section,
+footer,
 #contact {
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
+
+main.container,
+section,
+footer {
+  width: 100%;
+}
+
 .section {
   padding: 80px 5%;
 }
@@ -177,7 +188,7 @@ textarea {
 /* Home */
 .home {
   position: relative;
-  min-height: 100vh;
+  min-height: min(calc(100vh - 90px), 100dvh);
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(360px, 1fr);
   align-items: center;
@@ -185,6 +196,10 @@ textarea {
   padding: 120px 8% 80px;
   overflow: hidden;
 }
+.home {
+  width: 100%;
+}
+
 .home::before,
 .home::after {
   content: '';
@@ -297,7 +312,7 @@ textarea {
 }
 .home-hero-image img {
   width: min(420px, 100%);
-  border-radius: 32px;
+  border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: var(--shadow);
   animation: float 7s ease-in-out infinite;
@@ -370,6 +385,10 @@ textarea {
   }
   .navbar.show {
     display: flex;
+  }
+  .navbar a {
+    width: 100%;
+    padding: 0.75rem 0;
   }
   .menu-toggle {
     display: block;
@@ -449,14 +468,16 @@ textarea {
   }
 }
 
-/* Legacy duplicate styles removed to maintain responsive layout */
-
+/* Section layout and responsive patterns */
 .home,
 .container,
 .skills-section,
+.projects-section,
 .section,
+footer,
 #contact {
-  min-height: auto;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .container {
@@ -482,15 +503,28 @@ textarea {
   border-radius: 28px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.22);
+  object-fit: cover;
 }
 .info {
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 .info p,
 .about-section li,
 .about-section span,
 .tags span {
   color: var(--muted);
+}
+.about-section ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(170px, 1fr));
+  gap: 0.9rem 1.25rem;
+  margin-top: 1.5rem;
+}
+.about-section ul li {
+  line-height: 1.8;
 }
 .quote {
   font-style: italic;
@@ -510,7 +544,6 @@ textarea {
 }
 
 .skills-section {
-  width: 100%;
   padding: 80px 5% 80px;
   background: radial-gradient(circle at top, rgba(109, 92, 255, 0.14), transparent 28%), radial-gradient(circle at bottom right, rgba(255, 93, 159, 0.12), transparent 26%), rgba(4, 6, 20, 0.98);
 }
@@ -558,40 +591,80 @@ textarea {
   transition: width 1.4s ease-in-out;
 }
 
+.projects-section {
+  padding: 80px 5% 100px;
+  background: #020617;
+  color: #fff;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #9ca3af;
+  margin-bottom: 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
 .project-card {
-  height: auto;
-  background: var(--muted);
-  border-radius: 30px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  box-shadow: var(--shadow);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: white;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
+
 .project-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0, 255, 255, 0.18);
 }
-.project-card img {
+
+.project-image {
   width: 100%;
-  height: auto;
+  height: 180px;
   object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 15px;
 }
-.project-content {
-  color: var(--text);
+
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
 }
-.project-content p {
-  color: var(--muted);
+
+.project-actions {
+  display: flex;
+  justify-content: center;
 }
-.btn {
+
+.project-button {
+  width: auto;
+  padding: 0.95rem 1.6rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 5px;
-  padding: 12px 20px;
-  background: var(--primary);
-  color: #fff;
-  border-radius: 999px;
-  border: none;
-  text-decoration: none;
-  cursor: pointer;
+}
+
+.project-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(80, 125, 255, 0.22);
 }
 
 .contact-form {
@@ -605,6 +678,13 @@ textarea {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow);
+}
+.contact-note {
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  max-width: 640px;
 }
 .contact-form input,
 .contact-form textarea {
@@ -629,10 +709,17 @@ textarea {
   cursor: pointer;
 }
 
+.form-status {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+  text-align: center;
+}
+
 .footer {
   background: var(--header);
   color: #fff;
-  padding: 50px 5%;
+  padding: 60px 5% 50px;
 }
 .footer-content {
   display: grid;
@@ -642,7 +729,7 @@ textarea {
 .contact-item {
   display: flex;
   gap: 1rem;
-  align-items: center;
+  align-items: flex-start;
   padding: 1rem;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.04);
@@ -651,6 +738,24 @@ textarea {
 .contact-item i {
   font-size: 1.4rem;
   color: var(--secondary);
+  margin-top: 0.15rem;
+}
+.contact-item h4 {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+.contact-item a,
+.contact-item p {
+  color: #d1d5db;
+  text-decoration: none;
+}
+
+.copyright {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
 
@@ -686,7 +791,7 @@ textarea,
   gap: 0.5rem;
   padding: 0.95rem 1.4rem;
   border-radius: 999px;
-  border: none;
+  border: 2px solid #fff;
   cursor: pointer;
   text-decoration: none;
   color: #fff;
