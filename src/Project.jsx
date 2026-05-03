@@ -7,7 +7,7 @@ const projects = [
   {
     name: "Portfolio Website",
     image: ProImage,
-    link: "https://react-alam.versal.app/",
+    link: "https://react-alam.vercel.app/",
   },
   {
     name: "CollegeERP",
