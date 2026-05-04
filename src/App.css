@@ -940,7 +940,7 @@ textarea,
   .project-card img { height: 200px; }
 
   .footer {
-    padding: 40px 5% 30px;
+    padding: 20px 1% 30px;
   }
   .footer-content {
     grid-template-columns: 1fr;
