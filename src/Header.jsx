@@ -58,7 +58,7 @@ function Header() {
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skill">Skills</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects">Projects/Excel</a>
         <a href="#contact">Contact</a>
       </nav>
 

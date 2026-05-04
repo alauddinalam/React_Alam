@@ -939,19 +939,30 @@ textarea,
   }
   .project-card img { height: 200px; }
 
+  .footer {
+    padding: 40px 5% 30px;
+  }
   .footer-content {
     grid-template-columns: 1fr;
-    text-align: center;
-    justify-items: center;
+    gap: 1rem;
+    justify-items: stretch;
   }
   .contact-item {
+    width: 100%;
+    max-width: 100%;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    padding: 1.25rem;
+  }
+  .contact-item div {
+    width: 100%;
   }
   .contact-item p,
   .contact-item a {
     text-align: center;
+    display: block;
+    width: 100%;
   }
 }
 

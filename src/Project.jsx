@@ -2,7 +2,7 @@ import React from "react";
 import ProImage from "./assets/pro.jpeg";
 import AlambabuuImage from "./assets/alambabuu.avif";
 import ERPImage from "./assets/ERP.jpeg";
-import ChatAppImage from "./assets/alam02.jpg";
+import ChatAppImage from "./assets/Excel.png";
 const projects = [
   {
     name: "Portfolio Website",
@@ -20,9 +20,9 @@ const projects = [
     link: "https://alauddinalam.github.io/ESP/",
   },
   {
-    name: "Chat App",
+    name: "Sales Dashboard",
     image: ChatAppImage,
-    link: "https://your-chatapp-link.com",
+    link: "https://1drv.ms/x/c/C693C33045802DAC/IQC9EDafTc4ARZrmVfwhfGZSAa6We8bAHBsN3oqnJkSBHHM?e=cLkuAB",
   },
 ];
 
