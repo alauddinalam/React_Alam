@@ -12,7 +12,7 @@ const projects = [
   {
     name: "CollegeERP",
     image: ERPImage,
-    link: "https://alauddinalam.github.io/College-ERP/",
+    link: "https://alam-erp-1.onrender.com",
   },
   {
     name: "Electroserve",
