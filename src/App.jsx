@@ -1,6 +1,7 @@
 import Header from './Header.jsx';
 import Home from './Home.jsx';
 import About from './About.jsx';
+import Education from './Education.jsx';
 import Skills from './Skills.jsx';
 import Project from './Project.jsx';
 import Contact from './Contact.jsx';
@@ -14,6 +15,7 @@ function App() {
         <Header />
         <Home />
         <About />
+        <Education />
         <Skills />
         <Project />
         <Contact />
