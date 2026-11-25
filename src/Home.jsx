@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ScrollReveal, containerVariants, fadeUpVariant, slideInBottomVariant } from './ScrollReveal.jsx';
 import profile from './assets/pro.jpeg';
-import cv from './assets/Alauddin_Alam01_CV.pdf.pdf';
+import cv from './assets/Alauddin_alam_CV.pdf1.pdf';
 
 const typedStrings = [
   'Frontend Developer',
